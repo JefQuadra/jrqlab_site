@@ -7,33 +7,45 @@ body {
   overflow-x: hidden;
 }
 .opening {
-  position: relative;
   height: 100vh;
   color: white;
   text-shadow: 0 0 5px #000;
   align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+#menuTop {
+  display: flex;
+  width: 100%;
+  height: 35px;
+  justify-content: right;
+  align-items: top;
+  padding-right: 20px;
+  padding-top: 5px;
+  background: orange;
 }
 
 #c1 {
-  width: 100%;
-  height: 100%;
-  background-color: red;
-  position: absolute;
-  align-self: center;
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  background: linear-gradient(
+    0deg,
+    black,
+    transparent,
+    transparent,
+    transparent
+  );
   justify-content: center;
   align-items: center;
+  flex-grow: 1;
 }
 
 #nav {
+  display: flex;
   width: 100%;
   height: 65px;
-  background-color: green;
-  position: absolute;
-  bottom: 0px;
-  display: flex;
-  flex-direction: row;
+  background-color: black;
   justify-content: center;
   align-items: center;
 }
