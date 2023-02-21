@@ -19,24 +19,23 @@
   </head>
   <body>
     <main>
-      <div class="opening">
-        <div id="menuTop">
-          <div>
+      <section>
+        <div class="opening">
+          <div id="menu-top">
             <button
+              id="hamburguer"
               class="navbar-toggler collapsed"
               type="button"
               data-bs-toggle="collapse"
-              data-bs-target="#optionsshow"
-              aria-controls="optionsshow"
+              data-bs-target="#options-show"
+              aria-controls="options-show"
               aria-expanded="false"
               aria-label="Toggle navigator"
             >
-              <i
-                class="fa-solid fa-bars text-white d-flex justify-content-end"
-              ></i>
+              <i class="fa-solid fa-bars text-white"></i>
             </button>
-            <div class="navbar-collapse collapse" id="optionsshow">
-              <ul class="navbar-nav me-auto mb-2">
+            <div class="navbar-collapse collapse" id="options-show">
+              <ul class="navbar-nav w-100">
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="development" href="#"
                     >development</a
@@ -60,44 +59,170 @@
               </ul>
             </div>
           </div>
+          <div id="c1">
+            <img src="images/jrqlab_md.png" width="150px" />
+            <div id="frame-title-c1">
+              <h1>art and technology</h1>
+              <h4>by Jéf Quadra</h4>
+            </div>
+          </div>
+          <div id="nav" class="sticky-top">
+            <nav class="navbar navbar-expand-md navbar-light">
+              <button
+                class="navbar-toggler"
+                data-toggle="collapse"
+                data-target="#nav-principal"
+              >
+                <i class="fa-solid fa-bars text-white"></i>
+              </button>
+              <div class="collapse navbar-collapse" id="nav-principal">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a href="" class="nav-link text-white">fine arts</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="" class="nav-link text-white">developments</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="" class="nav-link text-white">posts</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="" class="nav-link text-white">profile</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="" class="nav-link text-white">companies</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="" class="nav-link text-white">contact</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
         </div>
-        <div id="c1">
-          <div>TEXT</div>
+        <div id="main-sentence">
+          <h3>
+            The important challenge of improving yourself every day more and
+            more...
+          </h3>
         </div>
-        <div id="nav" class="sticky-top">
-          <nav class="navbar navbar-expand-md navbar-light">
-            <button
-              class="navbar-toggler"
-              data-toggle="collapse"
-              data-target="#nav-principal"
-            >
-              <i class="fa-solid fa-bars text-white"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="nav-principal">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a href="" class="nav-link text-white">fine arts</a>
+      </section>
+      <section>
+        <div>
+          <h6>companies</h6>
+        </div>
+        <div class="div-padding">
+          <ul>
+            <li>
+              <ul>
+                <li>
+                  <img src="images/a-01.png" width="150px" />
                 </li>
-                <li class="nav-item">
-                  <a href="" class="nav-link text-white">developments</a>
-                </li>
-                <li class="nav-item">
-                  <a href="" class="nav-link text-white">feed</a>
-                </li>
-                <li class="nav-item">
-                  <a href="" class="nav-link text-white">profile</a>
-                </li>
-                <li class="nav-item">
-                  <a href="" class="nav-link text-white">companies</a>
-                </li>
-                <li class="nav-item">
-                  <a href="" class="nav-link text-white">contact</a>
+                <li>
+                  <h6>
+                    Paintings on canvas with oil paint from landscapes to
+                    portraits of people.
+                  </h6>
                 </li>
               </ul>
-            </div>
-          </nav>
+            </li>
+            <li>
+              <div>
+                <img src="images/a-02.jpg" width="300px" />
+                <div>
+                  <h4>GALLERY</h4>
+                </div>
+              </div>
+            </li>
+            <li>
+              <ul>
+                <li>
+                  <img src="images/a-03.png" width="150px" />
+                </li>
+                <li>
+                  <h6>
+                    Software development, responsive applications and software
+                    engineering studies.
+                  </h6>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div>
+                <img src="images/a-04.jpg" width="300px" />
+                <div>
+                  <h4>PROJECTS</h4>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+          </div>
         </div>
-      </div>
+      </section>
+      <section>
+        <div>
+          <h6>posts</h6>
+        </div>
+        <div class="div-padding">
+          <div class="post">
+            <div class="one-post">
+              <img src="images/b-01.jpg" class="img-posts" />
+              <div class="text-posts">
+                <div>
+                  <h3>Post 1</h3>
+                  <p>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book
+                  </p>
+                </div>
+                <footer>read more</footer>
+              </div>
+            </div>
+            <div class="one-post">
+              <img src="images/b-01.jpg" class="img-posts" />
+              <div class="text-posts">
+                <div>
+                  <h3>Post 1</h3>
+                  <p>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book
+                  </p>
+                </div>
+                <footer>read more</footer>
+              </div>
+            </div>
+            <div class="one-post">
+              <img src="images/b-01.jpg" class="img-posts" />
+              <div class="text-posts">
+                <div>
+                  <h3>Post 1</h3>
+                  <p>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book
+                  </p>
+                </div>
+                <footer>read more</footer>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section></section>
+      <section></section>
     </main>
     <!--<div class="opening">
       <a href="index.html" class="navbar-brand">

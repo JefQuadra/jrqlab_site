@@ -7,6 +7,7 @@ body {
   overflow-x: hidden;
 }
 .opening {
+  position: relative;
   height: 100vh;
   color: white;
   text-shadow: 0 0 5px #000;
@@ -15,15 +16,25 @@ body {
   flex-direction: column;
 }
 
-#menuTop {
+#menu-top {
+  position: absolute;
   display: flex;
+  flex-direction: column;
   width: 100%;
-  height: 35px;
-  justify-content: right;
-  align-items: top;
-  padding-right: 20px;
-  padding-top: 5px;
-  background: orange;
+  align-items: end;
+  background: linear-gradient(0deg, transparent, rgba(0, 0, 0, 0.5), black);
+}
+
+#hamburguer {
+  padding: 10px;
+  width: 40px;
+}
+
+#options-show {
+  width: 100%;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 #c1 {
@@ -36,9 +47,19 @@ body {
     transparent,
     transparent
   );
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-grow: 1;
+}
+
+#frame-title-c1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  margin-top: 50px;
 }
 
 #nav {
@@ -48,6 +69,55 @@ body {
   background-color: black;
   justify-content: center;
   align-items: center;
+}
+
+#main-sentence {
+  display: flex;
+  justify-content: center;
+  background: black;
+  color: #56ff3a;
+  padding: 40px;
+}
+
+.div-padding {
+  display: flex;
+  padding: 20px;
+  background: white;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+}
+
+.one-post {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background: gray;
+  margin: 10px;
+}
+
+.img-posts {
+  position: relative;
+  width: 600px;
+}
+
+footer {
+  text-align: end;
+}
+
+.text-posts {
+  display: flex;
+  padding-left: 15px;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  background: yellow;
 }
 
 .centralized {
