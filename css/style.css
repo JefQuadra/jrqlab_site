@@ -87,6 +87,41 @@ body {
   justify-content: center;
 }
 
+.companies-block {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.label-companies {
+  padding: 10px;
+}
+
+#gallery {
+  width: 300px;
+  height: 300px;
+  background: url(../images/a-02.jpg);
+  object-fit: cover;
+}
+
+#projects {
+  position: relative;
+}
+
+#projects-img {
+  position: relative;
+}
+
+#projects-div {
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  padding: 5px;
+  background: black;
+  color: white;
+}
+
 .post {
   display: flex;
   flex-direction: column;
