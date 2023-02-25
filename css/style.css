@@ -88,12 +88,21 @@ body {
 }
 
 .companies-block {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+}
+
+.company-description {
+  padding: 15px;
+  text-align: center;
 }
 
 .company-block {
-  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
 
 .img-companies {
@@ -104,12 +113,30 @@ body {
   height: 300px;
 }
 
+#quadrafinearts-logo {
+  width: 155px;
+  height: 150px;
+  background: url(../images/a-01.png) no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+
 #gallery {
+  padding: 10px;
   background: url(../images/a-02.jpg) no-repeat;
   background-size: 100%;
 }
 
+#quadradeveloperlab-logo {
+  width: 150px;
+  height: 150px;
+  background: url(../images/a-03.png) no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+
 #projects {
+  padding: 10px;
   background: url(../images/a-04.jpg) no-repeat;
   background-size: 100%;
 }
@@ -117,11 +144,16 @@ body {
 .label-companies {
   display: flex;
   justify-content: center;
-  position: absolute;
+  position: relative;
   width: 100%;
   background: black;
   color: white;
   padding-top: 5px;
+}
+
+#companies-description {
+  text-align: center;
+  padding: 50px 20px 50px 20px;
 }
 
 .post {
