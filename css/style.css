@@ -79,12 +79,27 @@ body {
   padding: 40px;
 }
 
+#companies-label {
+  background-color: gray;
+  color: black;
+  display: flex;
+  justify-content: center;
+}
+
+#posts-label {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  color: black;
+  border-bottom: 1px solid;
+}
+
 .div-padding {
   display: flex;
   padding: 20px;
   background: white;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .companies-block {
@@ -167,7 +182,20 @@ body {
   display: flex;
   align-items: center;
   padding: 20px;
-  background: gray;
+  background: #f1f1f1;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  margin: 10px;
+}
+
+.read-more-posts {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+  background: #f1f1f1;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
   margin: 10px;
 }
 
@@ -176,8 +204,14 @@ body {
   width: 600px;
 }
 
+.btn-readmore {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+}
+
 footer {
-  text-align: end;
+  width: 100px;
 }
 
 .text-posts {
@@ -186,17 +220,50 @@ footer {
   height: 100%;
   flex-direction: column;
   justify-content: space-between;
-  background: yellow;
 }
 
-.centralized {
+#div-padding-aboutme {
+  display: flex;
+  padding: 5px 0px 20px 0px;
+  background: #b3eef2;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  float: center;
 }
 
-.centralized2 {
+#info-profile {
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  float: bottom;
+  width: 600px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#info-profilephoto {
+  background: url(../images/c-01.png) no-repeat;
+  background-position: center;
+  background-size: 100%;
+  width: 25%;
+  height: 150px;
+}
+
+#info-profiletext {
+  width: 75%;
+  height: 150px;
+  padding-left: 20px;
+}
+
+#grid-images {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: 40% 40%;
+  background-color: #56ff3a;
+  height: 80%;
+}
+
+.grid-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
