@@ -19,46 +19,48 @@
   </head>
   <body>
     <main>
+      <div class="sticky-top">
+        <div id="menu-top">
+          <button
+            id="hamburguer"
+            class="navbar-toggler collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#options-show"
+            aria-controls="options-show"
+            aria-expanded="false"
+            aria-label="Toggle navigator"
+          >
+            <i class="fa-solid fa-bars text-white"></i>
+          </button>
+          <div class="navbar-collapse collapse" id="options-show">
+            <ul class="navbar-nav w-100">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="development" href="#"
+                  >development</a
+                >
+                <a class="nav-link active" aria-current="fine arts" href="#"
+                  >fine arts</a
+                >
+                <a class="nav-link active" aria-current="posts" href="#"
+                  >posts</a
+                >
+                <a class="nav-link active" aria-current="profile" href="#"
+                  >profile</a
+                >
+                <a class="nav-link active" aria-current="companies" href="#"
+                  >companies</a
+                >
+                <a class="nav-link active" aria-current="contact" href="#"
+                  >contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <section>
         <div class="opening">
-          <div id="menu-top">
-            <button
-              id="hamburguer"
-              class="navbar-toggler collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#options-show"
-              aria-controls="options-show"
-              aria-expanded="false"
-              aria-label="Toggle navigator"
-            >
-              <i class="fa-solid fa-bars text-white"></i>
-            </button>
-            <div class="navbar-collapse collapse" id="options-show">
-              <ul class="navbar-nav w-100">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="development" href="#"
-                    >development</a
-                  >
-                  <a class="nav-link active" aria-current="fine arts" href="#"
-                    >fine arts</a
-                  >
-                  <a class="nav-link active" aria-current="posts" href="#"
-                    >posts</a
-                  >
-                  <a class="nav-link active" aria-current="profile" href="#"
-                    >profile</a
-                  >
-                  <a class="nav-link active" aria-current="companies" href="#"
-                    >companies</a
-                  >
-                  <a class="nav-link active" aria-current="contact" href="#"
-                    >contact</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
           <div id="c1">
             <img src="images/jrqlab_md.png" width="150px" />
             <div id="frame-title-c1">
@@ -66,47 +68,47 @@
               <h4>by Jéf Quadra</h4>
             </div>
           </div>
-          <div id="nav" class="sticky-top">
-            <nav class="navbar navbar-expand-md navbar-light">
-              <button
-                class="navbar-toggler"
-                data-toggle="collapse"
-                data-target="#nav-principal"
-              >
-                <i class="fa-solid fa-bars text-white"></i>
-              </button>
-              <div class="collapse navbar-collapse" id="nav-principal">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a href="" class="nav-link text-white">fine arts</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="" class="nav-link text-white">developments</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="" class="nav-link text-white">posts</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="" class="nav-link text-white">profile</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="" class="nav-link text-white">companies</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="" class="nav-link text-white">contact</a>
-                  </li>
-                </ul>
-              </div>
-            </nav>
-          </div>
-        </div>
-        <div id="main-sentence">
-          <h3>
-            The important challenge of improving yourself every day more and
-            more...
-          </h3>
         </div>
       </section>
+      <div id="nav" class="sticky-top">
+        <nav class="navbar navbar-expand-md navbar-light">
+          <button
+            class="navbar-toggler"
+            data-toggle="collapse"
+            data-target="#nav-principal"
+          >
+            <i class="fa-solid fa-bars text-white"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="nav-principal">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a href="" class="nav-link text-white">fine arts</a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link text-white">developments</a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link text-white">posts</a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link text-white">profile</a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link text-white">companies</a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link text-white">contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div id="main-sentence">
+        <h3>
+          The important challenge of improving yourself every day more and
+          more...
+        </h3>
+      </div>
       <section>
         <div id="companies-label">
           <h6>companies</h6>
@@ -298,7 +300,12 @@
           </small>
         </div>
       </section>
-      <section></section>
+      <section>
+        <div id="footer">
+          <img id="img-footer" src="images/a-03.png" />
+          <p>&copy; 2023 Quadra Developer Lab. All Rights Reserved.</p>
+        </div>
+      </section>
     </main>
     <!--<div class="opening">
       <a href="index.html" class="navbar-brand">
