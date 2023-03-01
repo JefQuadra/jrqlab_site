@@ -77,6 +77,7 @@ body {
   justify-content: center;
   align-items: center;
   z-index: -1;
+  font-family: "Ink Free";
 }
 
 #main-sentence {
@@ -85,6 +86,7 @@ body {
   background: black;
   color: #56ff3a;
   padding: 40px;
+  font-family: "Bahnschrift";
 }
 
 #companies-label {
@@ -321,6 +323,9 @@ footer {
 
 /*phones*/
 @media (max-width: 768px) {
+  #nav {
+    display: none;
+  }
   #menu-top {
     display: flex;
   }
