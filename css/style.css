@@ -26,11 +26,11 @@ body {
   width: 100%;
   background: linear-gradient(
     0deg,
+    rgba(0, 0, 0, 0.3),
     rgba(0, 0, 0, 0.4),
-    rgba(0, 0, 0, 0.6),
-    black
+    rgba(0, 0, 0, 0.5)
   );
-  font-family: "Bahnschrift Light";
+  font-family: "Bahnschrift SemiBold";
 }
 
 .hidden-div {
@@ -46,6 +46,8 @@ body {
 }
 
 .menu-option {
+  position: relative;
+  left: -30px;
   font-size: 0px;
   padding: 6px 15px;
 }
@@ -58,9 +60,9 @@ body {
   align-items: end;
   background: linear-gradient(
     0deg,
-    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.6),
-    black
+    rgba(0, 0, 0, 0.7)
   );
   color: white;
 }

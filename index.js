@@ -1,48 +1,92 @@
+let changing = false;
+let openDiv = false;
+
 window.onscroll = function () {
   myFunction();
 };
 
 function myFunction() {
-  document.getElementById("hamburguer").className = "navbar-toggler collapsed";
-  document.getElementById("hamburguer").ariaExpanded = false;
-  document.getElementById("options-show").className =
-    "navbar-collapse collapse";
-
-  //if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
-  //  console.log(document.getElementById("nav").scrollTop);
-  //}
-}
-
-const showMenu = document.querySelector("[show-menu]");
-showMenu.onclick = function (e) {
-  if (document.getElementById("menu-options").className == "show-div") {
+  const showMenu = document.querySelector("[show-menu]");
+  if (
+    document.getElementById("menu-options").className == "show-div" &&
+    changing == false &&
+    openDiv == true
+  ) {
+    changing = true;
     let fontOpt = document.getElementsByClassName("menu-option");
     let initialSize = 16;
-    id1 = setInterval(decrease, 15);
+    let positionX = 0;
+    id1 = setInterval(decrease, 5);
     function decrease() {
       if (initialSize == 0) {
         clearInterval(id1);
         document.getElementById("menu-options").className = "hidden-div";
+        changing = false;
+        openDiv = false;
       } else {
         for (let e of fontOpt) {
           e.style.fontSize = initialSize + "px";
+          e.style.left = positionX + "px";
         }
         initialSize = initialSize - 1;
+        positionX = positionX - 2;
       }
     }
-  } else {
+  }
+}
+
+const showMenu = document.querySelector("[show-menu]");
+showMenu.onclick = function (e) {
+  //close div
+  if (
+    document.getElementById("menu-options").className == "show-div" &&
+    changing == false &&
+    openDiv == true
+  ) {
+    changing = true;
+    let fontOpt = document.getElementsByClassName("menu-option");
+    let initialSize = 17;
+    let positionX = 0;
+    id1 = setInterval(decrease, 5);
+    function decrease() {
+      if (initialSize == 0) {
+        clearInterval(id1);
+        document.getElementById("menu-options").className = "hidden-div";
+        changing = false;
+        openDiv = false;
+      } else {
+        for (let e of fontOpt) {
+          e.style.fontSize = initialSize + "px";
+          e.style.left = positionX + "px";
+        }
+        initialSize = initialSize - 1;
+        positionX = positionX - 2;
+      }
+    }
+    //open div
+  } else if (
+    document.getElementById("menu-options").className == "hidden-div" &&
+    changing == false &&
+    openDiv == false
+  ) {
+    changing = true;
     document.getElementById("menu-options").className = "show-div";
     let fontOpt = document.getElementsByClassName("menu-option");
     let initialSize = 0;
-    id2 = setInterval(grow, 15);
+    let positionX = -30;
+    id2 = setInterval(grow, 5);
     function grow() {
-      if (initialSize == 16) {
+      if (initialSize == 17) {
         clearInterval(id2);
+        changing = false;
+        openDiv = true;
       } else {
         for (let e of fontOpt) {
           e.style.fontSize = initialSize + "px";
+          e.style.left = positionX + "px";
         }
         initialSize = initialSize + 1;
+        positionX = positionX + 2;
       }
     }
   }
