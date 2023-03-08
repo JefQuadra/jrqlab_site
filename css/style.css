@@ -9,6 +9,7 @@
 
 body {
   overflow-x: hidden;
+  background-color: black;
 }
 
 #earth {
@@ -16,12 +17,11 @@ body {
   height: 100%;
   width: 100%;
   background-image: url(../images/home_background.jpg);
-  transform: translateZ(-5px) scale(1);
+  transform: translateZ(-1px) scale(1);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 100px 100px;
+  background-position: 0px 0px;
   background-attachment: fixed;
-
   z-index: -1;
 }
 
@@ -131,7 +131,11 @@ body {
   justify-content: center;
   align-items: center;
   z-index: -1;
-  font-family: "Bahnschrift Light";
+  font-family: "Bahnschrift SemiBold";
+}
+
+#sectionCampanies {
+  background-color: black;
 }
 
 #main-sentence {
@@ -139,15 +143,22 @@ body {
   justify-content: center;
   background: black;
   color: #56ff3a;
-  padding: 40px;
-  font-family: "Bahnschrift";
+  padding: 80px 40px;
+  font-family: "PressStart";
+}
+
+@font-face {
+  font-family: "PressStart";
+  size-adjust: 50%;
+  src: url(../fonts/PressStart2P-Regular.ttf);
 }
 
 #companies-label {
-  background-color: lightgray;
+  background-color: white;
   color: black;
   display: flex;
   justify-content: center;
+  border-radius: 24px 24px 0px 0px;
 }
 
 #posts-label {
@@ -409,6 +420,10 @@ footer {
 
 /*laptops and desktops*/
 @media (min-width: 1201px) {
+  #grid-favorites {
+    grid-template-columns: repeat(18, 5.555%);
+    grid-template-rows: repeat(2, 50%);
+  }
 }
 
 /*

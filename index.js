@@ -1,12 +1,41 @@
 let changing = false;
 let openDiv = false;
 
+function load() {
+  let initialScaleEarth = 1;
+  let finalScaleEarth = 2;
+  let scaleBackgroundEarth = 1;
+  let factorGrow = 0.001;
+  let timeOK = 100;
+  let growScale = true;
+  let backgroundEarth = document.getElementById("earth");
+  factor = setInterval(setBackgroundEarth, timeOK);
+  function setBackgroundEarth() {
+    if (scaleBackgroundEarth < finalScaleEarth && growScale) {
+      backgroundEarth.style.transform = "scale(" + scaleBackgroundEarth + ")";
+      scaleBackgroundEarth = scaleBackgroundEarth + factorGrow;
+    } else if (scaleBackgroundEarth > finalScaleEarth) {
+      growScale = false;
+      backgroundEarth.style.transform = "scale(" + scaleBackgroundEarth + ")";
+      scaleBackgroundEarth = scaleBackgroundEarth - factorGrow;
+    } else if (
+      scaleBackgroundEarth < finalScaleEarth &&
+      scaleBackgroundEarth > initialScaleEarth &&
+      !growScale
+    ) {
+      backgroundEarth.style.transform = "scale(" + scaleBackgroundEarth + ")";
+      scaleBackgroundEarth = scaleBackgroundEarth - factorGrow;
+    } else if (scaleBackgroundEarth < initialScaleEarth && !growScale) {
+      clearInterval(factor);
+    }
+  }
+}
+
 window.onscroll = function () {
   myFunction();
 };
 
 function myFunction() {
-  const showMenu = document.querySelector("[show-menu]");
   if (
     document.getElementById("menu-options").className == "show-div" &&
     changing == false &&
@@ -90,5 +119,4 @@ showMenu.onclick = function (e) {
       }
     }
   }
-  //console.log(document.getElementsByClassName("menu-options").className);
 };
