@@ -1,10 +1,28 @@
-body {
+/*body {
   background-image: url(../images/home_background.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
   background-attachment: fixed;
   overflow-x: hidden;
+}*/
+
+body {
+  overflow-x: hidden;
+}
+
+#earth {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-image: url(../images/home_background.jpg);
+  transform: translateZ(-5px) scale(1);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 100px 100px;
+  background-attachment: fixed;
+
+  z-index: -1;
 }
 
 .opening {
