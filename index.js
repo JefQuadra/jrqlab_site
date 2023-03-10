@@ -2,7 +2,19 @@ let changing = false;
 let openDiv = false;
 let menuArrivedTop = false;
 
+function writeSentence() {
+  let sentence = document.getElementById("sentence");
+  //sentence.style.color = "#56ff3a";
+
+  let textSentence = sentence.innerHTML;
+  console.log(textSentence);
+  for (let t of textSentence) {
+    //console.log(t);
+  }
+}
+
 function load() {
+  writeSentence();
   let initialScaleEarth = 1;
   let finalScaleEarth = 2;
   let scaleBackgroundEarth = 1;
@@ -48,7 +60,7 @@ function topNavigation() {
     !menuArrivedTop
   ) {
     menuArrivedTop = true;
-    imgMenuTop.style.display = "block";
+    imgMenuTop.style.display = "flex";
     topmenu.style.justifyContent = "left";
   } else if (
     topmenu.getBoundingClientRect().y > 0 &&

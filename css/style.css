@@ -138,9 +138,12 @@ body {
   display: flex;
   justify-content: center;
   background: black;
-  color: #56ff3a;
   padding: 80px 40px;
   font-family: "PressStart";
+}
+
+#sentence {
+  color: black;
 }
 
 @font-face {
