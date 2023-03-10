@@ -3,13 +3,35 @@ let openDiv = false;
 let menuArrivedTop = false;
 
 function writeSentence() {
+  let newSentence = [];
+  let sentenceFinal = "";
+  let inputCursor = "";
   let sentence = document.getElementById("sentence");
   //sentence.style.color = "#56ff3a";
-
   let textSentence = sentence.innerHTML;
-  console.log(textSentence);
-  for (let t of textSentence) {
-    //console.log(t);
+  let sentenceSplit = textSentence.split(" ");
+  for (let i = 0; i < sentenceSplit.length + 1; i++) {
+    if (i < sentenceSplit.length) {
+      if (sentenceSplit[i] != "") {
+        console.log;
+        let clearS = sentenceSplit[i].replace("\n", "");
+        if (clearS != "") {
+          newSentence.push(clearS);
+        }
+      }
+    } else {
+      for (let j; j < newSentence.length; j++) {
+        if (j == 0) {
+          inputCursor = newSentence[j];
+        } else if (j == 1) {
+          sentenceFinal = newSentence[j];
+        } else {
+          sentenceFinal = sentenceFinal + " " + newSentence[j];
+        }
+        console.log("Sentencefinal: " + sentencefinal);
+        console.log("inputCursor: " + inputCursor);
+      }
+    }
   }
 }
 
