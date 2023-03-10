@@ -1,5 +1,6 @@
 let changing = false;
 let openDiv = false;
+let menuArrivedTop = false;
 
 function load() {
   let initialScaleEarth = 1;
@@ -32,10 +33,35 @@ function load() {
 }
 
 window.onscroll = function () {
-  myFunction();
+  //Function to hide open menu
+  hideOpenMenu();
+  //Adjust navigation menu when reaching top
+  topNavigation();
 };
 
-function myFunction() {
+function topNavigation() {
+  let imgMenuTop = document.getElementById("logoMenuTop");
+  let topmenu = document.getElementById("nav");
+  if (
+    topmenu.getBoundingClientRect().y == 0 &&
+    document.body.clientWidth > 768 &&
+    !menuArrivedTop
+  ) {
+    menuArrivedTop = true;
+    imgMenuTop.style.display = "block";
+    topmenu.style.justifyContent = "left";
+  } else if (
+    topmenu.getBoundingClientRect().y > 0 &&
+    document.body.clientWidth > 768 &&
+    menuArrivedTop
+  ) {
+    menuArrivedTop = false;
+    topmenu.style.justifyContent = "center";
+    imgMenuTop.style.display = "none";
+  }
+}
+
+function hideOpenMenu() {
   if (
     document.getElementById("menu-options").className == "show-div" &&
     changing == false &&
