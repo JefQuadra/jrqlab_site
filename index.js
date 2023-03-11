@@ -1,6 +1,7 @@
 let changing = false;
 let openDiv = false;
 let menuArrivedTop = false;
+let imgLogoHide = false;
 
 function writeSentence() {
   let newSentence = [];
@@ -37,6 +38,7 @@ function writeSentence() {
 
 function load() {
   writeSentence();
+  topNavigation();
   let initialScaleEarth = 1;
   let finalScaleEarth = 2;
   let scaleBackgroundEarth = 1;
@@ -91,6 +93,14 @@ function topNavigation() {
   ) {
     menuArrivedTop = false;
     topmenu.style.justifyContent = "center";
+    imgMenuTop.style.display = "none";
+  } else if (
+    topmenu.getBoundingClientRect().y > 0 &&
+    document.body.clientWidth > 768 &&
+    !menuArrivedTop &&
+    !imgLogoHide
+  ) {
+    imgLogoHide = true;
     imgMenuTop.style.display = "none";
   }
 }
