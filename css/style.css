@@ -136,14 +136,15 @@ body {
 
 #main-sentence {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   background: black;
   padding: 80px 40px;
   font-family: "PressStart";
 }
 
 #sentence {
-  color: black;
+  display: none;
+  color: rgb(41, 255, 41);
 }
 
 @font-face {

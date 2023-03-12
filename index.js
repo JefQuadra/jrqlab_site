@@ -2,11 +2,12 @@ let changing = false;
 let openDiv = false;
 let menuArrivedTop = false;
 let imgLogoHide = false;
+let sentenceFinal = "";
+let inputCursor = "";
+let loadSentenceOnce = false;
 
 function writeSentence() {
   let newSentence = [];
-  let sentenceFinal = "";
-  let inputCursor = "";
   let sentence = document.getElementById("sentence");
   //sentence.style.color = "#56ff3a";
   let textSentence = sentence.innerHTML;
@@ -14,14 +15,13 @@ function writeSentence() {
   for (let i = 0; i < sentenceSplit.length + 1; i++) {
     if (i < sentenceSplit.length) {
       if (sentenceSplit[i] != "") {
-        console.log;
         let clearS = sentenceSplit[i].replace("\n", "");
         if (clearS != "") {
           newSentence.push(clearS);
         }
       }
     } else {
-      for (let j; j < newSentence.length; j++) {
+      for (let j = 0; j < newSentence.length; j++) {
         if (j == 0) {
           inputCursor = newSentence[j];
         } else if (j == 1) {
@@ -29,8 +29,6 @@ function writeSentence() {
         } else {
           sentenceFinal = sentenceFinal + " " + newSentence[j];
         }
-        console.log("Sentencefinal: " + sentencefinal);
-        console.log("inputCursor: " + inputCursor);
       }
     }
   }
@@ -73,7 +71,38 @@ window.onscroll = function () {
   hideOpenMenu();
   //Adjust navigation menu when reaching top
   topNavigation();
+  loadSentence();
 };
+
+function loadSentence() {
+  let sentence = document.getElementById("sentence");
+  if (
+    sentence.getBoundingClientRect().y < window.innerHeight &&
+    !loadSentenceOnce
+  ) {
+    loadSentenceOnce = true;
+    //Here will run the code to load sentence.
+
+    let initialCursor = -20;
+    let initialTime = 50;
+    let sentenceText = "";
+    id = setInterval(loadWordsSentence, initialTime);
+    function loadWordsSentence() {
+      if (initialCursor > -1) {
+        if (initialCursor < sentenceFinal.length) {
+          sentenceText = sentenceText + sentenceFinal[initialCursor];
+          sentence.innerHTML = sentenceText + inputCursor;
+        } else {
+          clearInterval(id);
+        }
+      } else {
+        sentence.style.display = "inline-block";
+        sentence.innerHTML = inputCursor;
+      }
+      initialCursor++;
+    }
+  }
+}
 
 function topNavigation() {
   let imgMenuTop = document.getElementById("logoMenuTop");
