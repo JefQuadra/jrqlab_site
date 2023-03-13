@@ -114,6 +114,7 @@ function topNavigation() {
   ) {
     menuArrivedTop = true;
     imgMenuTop.style.display = "flex";
+    imgMenuTop.style.width = "60px";
     topmenu.style.justifyContent = "left";
   } else if (
     topmenu.getBoundingClientRect().y > 0 &&
@@ -175,7 +176,7 @@ showMenu.onclick = function (e) {
     let fontOpt = document.getElementsByClassName("menu-option");
     let initialSize = 17;
     let positionX = 0;
-    id1 = setInterval(decrease, 5);
+    id1 = setInterval(decrease, 2);
     function decrease() {
       if (initialSize == 0) {
         clearInterval(id1);
