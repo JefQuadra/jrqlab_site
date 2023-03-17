@@ -5,6 +5,7 @@ let imgLogoHide = false;
 let sentenceFinal = "";
 let inputCursor = "";
 let loadSentenceOnce = false;
+let slideIndex = 1;
 
 function writeSentence() {
   let newSentence = [];
@@ -35,6 +36,7 @@ function writeSentence() {
 }
 
 function load() {
+  showSlides(slideIndex);
   writeSentence();
   topNavigation();
   let initialScaleEarth = 1;
@@ -220,3 +222,37 @@ showMenu.onclick = function (e) {
     }
   }
 };
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides((slideIndex += n));
+}
+
+// Thumbnail image control
+function currentSlide(n) {
+  showSlides((slideIndex = n));
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+
+  let dots = document.getElementsByClassName("dot");
+
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
+}
