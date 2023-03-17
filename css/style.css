@@ -371,18 +371,13 @@ footer {
 #grid-images {
   margin-top: 30px;
   display: grid;
-  grid-template-columns: repeat(8, 12.5%);
 }
 
 .grid-image {
   transition: all 0.2s ease-in-out;
   width: 100%;
-  height: 100%;
+  height: 230px;
   object-fit: cover;
-}
-
-.grid-image:hover {
-  transform: scale(2.2);
 }
 
 /* Slideshow images */
@@ -444,12 +439,12 @@ footer {
 }
 
 /* Fading animation */
-.efect {
+.carouselEfect {
   animation-name: fade;
   animation-duration: 1.5s;
 }
 
-@keyframes efect {
+@keyframes fade {
   from {
     opacity: 0.4;
   }
@@ -565,6 +560,10 @@ footer {
   .one-post {
     flex-direction: column;
   }
+
+  #grid-images {
+    display: none;
+  }
 }
 
 /*tablets*/
@@ -587,6 +586,10 @@ footer {
     height: 100%;
     object-fit: cover;
   }
+
+  #grid-images {
+    display: none;
+  }
 }
 
 /*small laptops*/
@@ -602,6 +605,19 @@ footer {
   #space-between-companies {
     grid-column-start: 1;
     grid-column-end: 4;
+  }
+
+  #grid-images {
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: repeat(2, 50%);
+  }
+
+  .grid-image:hover {
+    transform: scale(1.3);
+  }
+
+  .show-slide {
+    display: none;
   }
 }
 
@@ -623,6 +639,18 @@ footer {
 
   .company-block {
     background-color: #e4fdff;
+  }
+
+  #grid-images {
+    grid-template-columns: repeat(8, 12.5%);
+  }
+
+  .grid-image:hover {
+    transform: scale(2.2);
+  }
+
+  .show-slide {
+    display: none;
   }
 }
 
