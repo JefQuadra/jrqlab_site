@@ -382,6 +382,7 @@ footer {
 
 /* Slideshow images */
 .slideshow-images {
+  padding-top: 20px;
   max-width: 1000px;
   position: relative;
   margin: auto;
@@ -397,7 +398,7 @@ footer {
 #next {
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 51%;
   width: auto;
   margin-top: -22px;
   padding: 16px;
