@@ -122,12 +122,17 @@ body {
   transform: scale(1.2);
 }
 
-.select {
+.selected {
   color: #4800ff;
 }
 
 #nav a {
   color: white;
+  text-decoration: none;
+}
+
+#nav a[href="#posts"] {
+  color: green;
   text-decoration: none;
 }
 

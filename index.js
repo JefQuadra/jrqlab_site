@@ -6,6 +6,16 @@ let sentenceFinal = "";
 let inputCursor = "";
 let loadSentenceOnce = false;
 let slideIndex = 1;
+let lastURL = "index.html";
+
+function navigate(page) {
+  let lastURLSelect = document.querySelector(`a[href='${lastURL}']`);
+  lastURLSelect.classList.remove("selected");
+
+  let markNew = document.querySelector(`a[href='${page}']`);
+  markNew.classList.add("selected");
+  lastURL = page;
+}
 
 function writeSentence() {
   let newSentence = [];
