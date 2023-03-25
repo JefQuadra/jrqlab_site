@@ -122,6 +122,15 @@ body {
   transform: scale(1.2);
 }
 
+.select {
+  color: #4800ff;
+}
+
+#nav a {
+  color: white;
+  text-decoration: none;
+}
+
 #logoMenuTop {
   display: none;
   transition: all 0.2s ease-in-out;
