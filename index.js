@@ -6,39 +6,47 @@ let sentenceFinal = "";
 let inputCursor = "";
 let loadSentenceOnce = false;
 let slideIndex = 1;
-let lastURL = "index.html";
+let noMain = false;
 
 function navigate(page) {
-  let lastURLSelect = document.querySelector(`a[href='${lastURL}']`);
-  lastURLSelect.classList.remove("selected");
+  window.location.href = page;
+}
 
-  let markNew = document.querySelector(`a[href='${page}']`);
-  markNew.classList.add("selected");
-  lastURL = page;
+function turnOffMain() {
+  noMain = true;
+  let imgMenuTop = document.getElementById("logoMenuTop");
+  let topmenu = document.getElementById("nav");
+  if (document.body.clientWidth > 768) {
+    menuArrivedTop = true;
+    imgMenuTop.style.display = "flex";
+    imgMenuTop.style.width = "60px";
+    topmenu.style.justifyContent = "left";
+  }
 }
 
 function writeSentence() {
-  let newSentence = [];
-  let sentence = document.getElementById("sentence");
-  //sentence.style.color = "#56ff3a";
-  let textSentence = sentence.innerHTML;
-  let sentenceSplit = textSentence.split(" ");
-  for (let i = 0; i < sentenceSplit.length + 1; i++) {
-    if (i < sentenceSplit.length) {
-      if (sentenceSplit[i] != "") {
-        let clearS = sentenceSplit[i].replace("\n", "");
-        if (clearS != "") {
-          newSentence.push(clearS);
+  if (!noMain) {
+    let newSentence = [];
+    let sentence = document.getElementById("sentence");
+    let textSentence = sentence.innerHTML;
+    let sentenceSplit = textSentence.split(" ");
+    for (let i = 0; i < sentenceSplit.length + 1; i++) {
+      if (i < sentenceSplit.length) {
+        if (sentenceSplit[i] != "") {
+          let clearS = sentenceSplit[i].replace("\n", "");
+          if (clearS != "") {
+            newSentence.push(clearS);
+          }
         }
-      }
-    } else {
-      for (let j = 0; j < newSentence.length; j++) {
-        if (j == 0) {
-          inputCursor = newSentence[j];
-        } else if (j == 1) {
-          sentenceFinal = newSentence[j];
-        } else {
-          sentenceFinal = sentenceFinal + " " + newSentence[j];
+      } else {
+        for (let j = 0; j < newSentence.length; j++) {
+          if (j == 0) {
+            inputCursor = newSentence[j];
+          } else if (j == 1) {
+            sentenceFinal = newSentence[j];
+          } else {
+            sentenceFinal = sentenceFinal + " " + newSentence[j];
+          }
         }
       }
     }
@@ -46,6 +54,7 @@ function writeSentence() {
 }
 
 function load() {
+  console.log(testBool);
   showSlides(slideIndex);
   writeSentence();
   topNavigation();
@@ -87,31 +96,33 @@ window.onscroll = function () {
 };
 
 function loadSentence() {
-  let sentence = document.getElementById("sentence");
-  if (
-    sentence.getBoundingClientRect().y < window.innerHeight &&
-    !loadSentenceOnce
-  ) {
-    loadSentenceOnce = true;
-    //Here will run the code to load sentence.
+  if (!noMain) {
+    let sentence = document.getElementById("sentence");
+    if (
+      sentence.getBoundingClientRect().y < window.innerHeight &&
+      !loadSentenceOnce
+    ) {
+      loadSentenceOnce = true;
+      //Here will run the code to load sentence.
 
-    let initialCursor = -20;
-    let initialTime = 50;
-    let sentenceText = "";
-    id = setInterval(loadWordsSentence, initialTime);
-    function loadWordsSentence() {
-      if (initialCursor > -1) {
-        if (initialCursor < sentenceFinal.length) {
-          sentenceText = sentenceText + sentenceFinal[initialCursor];
-          sentence.innerHTML = sentenceText + inputCursor;
+      let initialCursor = -20;
+      let initialTime = 50;
+      let sentenceText = "";
+      id = setInterval(loadWordsSentence, initialTime);
+      function loadWordsSentence() {
+        if (initialCursor > -1) {
+          if (initialCursor < sentenceFinal.length) {
+            sentenceText = sentenceText + sentenceFinal[initialCursor];
+            sentence.innerHTML = sentenceText + inputCursor;
+          } else {
+            clearInterval(id);
+          }
         } else {
-          clearInterval(id);
+          sentence.style.display = "inline-block";
+          sentence.innerHTML = inputCursor;
         }
-      } else {
-        sentence.style.display = "inline-block";
-        sentence.innerHTML = inputCursor;
+        initialCursor++;
       }
-      initialCursor++;
     }
   }
 }
