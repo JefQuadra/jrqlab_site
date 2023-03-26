@@ -2,11 +2,12 @@ let changing = false;
 let openDiv = false;
 let menuArrivedTop = false;
 let imgLogoHide = false;
-let sentenceFinal = "";
-let inputCursor = "";
 let loadSentenceOnce = false;
 let slideIndex = 1;
-let noMain = false;
+let counter = 0;
+sessionStorage.loaded;
+sessionStorage.sentenceFinal;
+sessionStorage.inputCursor;
 
 function navigate(page) {
   window.location.href = page;
@@ -25,28 +26,27 @@ function turnOffMain() {
 }
 
 function writeSentence() {
-  if (!noMain) {
-    let newSentence = [];
-    let sentence = document.getElementById("sentence");
-    let textSentence = sentence.innerHTML;
-    let sentenceSplit = textSentence.split(" ");
-    for (let i = 0; i < sentenceSplit.length + 1; i++) {
-      if (i < sentenceSplit.length) {
-        if (sentenceSplit[i] != "") {
-          let clearS = sentenceSplit[i].replace("\n", "");
-          if (clearS != "") {
-            newSentence.push(clearS);
-          }
+  let newSentence = [];
+  let sentence = document.getElementById("sentence");
+  let textSentence = sentence.innerHTML;
+  let sentenceSplit = textSentence.split(" ");
+  for (let i = 0; i < sentenceSplit.length + 1; i++) {
+    if (i < sentenceSplit.length) {
+      if (sentenceSplit[i] != "") {
+        let clearS = sentenceSplit[i].replace("\n", "");
+        if (clearS != "") {
+          newSentence.push(clearS);
         }
-      } else {
-        for (let j = 0; j < newSentence.length; j++) {
-          if (j == 0) {
-            inputCursor = newSentence[j];
-          } else if (j == 1) {
-            sentenceFinal = newSentence[j];
-          } else {
-            sentenceFinal = sentenceFinal + " " + newSentence[j];
-          }
+      }
+    } else {
+      for (let j = 0; j < newSentence.length; j++) {
+        if (j == 0) {
+          sessionStorage.inputCursor = newSentence[j];
+        } else if (j == 1) {
+          sessionStorage.sentenceFinal = newSentence[j];
+        } else {
+          sessionStorage.sentenceFinal =
+            sessionStorage.sentenceFinal + " " + newSentence[j];
         }
       }
     }
@@ -54,7 +54,7 @@ function writeSentence() {
 }
 
 function load() {
-  console.log(testBool);
+  console.log(sessionStorage.loaded);
   showSlides(slideIndex);
   writeSentence();
   topNavigation();
@@ -96,7 +96,7 @@ window.onscroll = function () {
 };
 
 function loadSentence() {
-  if (!noMain) {
+  if (!sessionStorage.loaded) {
     let sentence = document.getElementById("sentence");
     if (
       sentence.getBoundingClientRect().y < window.innerHeight &&
@@ -111,18 +111,29 @@ function loadSentence() {
       id = setInterval(loadWordsSentence, initialTime);
       function loadWordsSentence() {
         if (initialCursor > -1) {
-          if (initialCursor < sentenceFinal.length) {
-            sentenceText = sentenceText + sentenceFinal[initialCursor];
-            sentence.innerHTML = sentenceText + inputCursor;
+          if (initialCursor < sessionStorage.sentenceFinal.length) {
+            sentenceText =
+              sentenceText + sessionStorage.sentenceFinal[initialCursor];
+            sentence.innerHTML = sentenceText + sessionStorage.inputCursor;
           } else {
             clearInterval(id);
+            sessionStorage.loaded = true;
           }
         } else {
           sentence.style.display = "inline-block";
-          sentence.innerHTML = inputCursor;
+          sentence.innerHTML = sessionStorage.inputCursor;
         }
         initialCursor++;
       }
+    }
+  } else {
+    if (
+      sentence.getBoundingClientRect().y < window.innerHeight &&
+      !loadSentenceOnce
+    ) {
+      sentence.innerHTML =
+        sessionStorage.sentenceFinal + sessionStorage.inputCursor;
+      sentence.style.display = "inline-block";
     }
   }
 }
