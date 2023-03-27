@@ -52,7 +52,7 @@ function writeSentence() {
     }
   }
 }
-
+// here is used sessionstorage
 function load() {
   console.log(sessionStorage.loaded);
   showSlides(slideIndex);
