@@ -1,0 +1,59 @@
+#background-gallery {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 15px;
+    color: black;
+    background-color: gainsboro;
+}
+
+#assinatura {
+    align-self: center;
+}
+
+@media (min-width: 550px) and (max-width: 768px) {
+    
+  }
+  
+  @media (max-width: 549px) {
+  }
+  
+  /*orange - phones*/
+  @media (max-width: 768px) {
+
+    #background-gallery {
+      display: flex;
+      flex-direction: column;
+      padding-top: 50px;
+    
+    }
+
+    #assinatura {
+        width: 40%;
+    }
+    
+  }
+  
+  /*green - tablets*/
+  @media (min-width: 769px) and (max-width: 992px) {
+    #assinatura {
+        width: 200px;
+    }
+  }
+  
+  /*blue - small laptops*/
+  @media (min-width: 993px) and (max-width: 1200px) {
+    #assinatura {
+        width: 250px;
+    }
+  }
+  
+  /*yellow - laptops and desktops*/
+  @media (min-width: 1201px) {
+    #assinatura {
+        width: 350px;
+    }
+    
+  }

@@ -3,6 +3,13 @@ body {
   background-color: black;
 }
 
+.background-gallery {
+  height: 500;
+  width: 600;
+  color: gray;
+  background-color: red;
+}
+
 #screen-size {
   bottom: 0;
   right: 0;
@@ -662,8 +669,8 @@ footer {
 
 /*
 The Bootstrap grid system has four classes:
-xs (for phones - screens less than 768px wide)
-sm (for tablets - screens equal to or greater than 768px wide)
-md (for small laptops - screens equal to or greater than 992px wide)
-lg (for laptops and desktops - screens equal to or greater than 1200px wide)
+xs (orange - for phones - screens less than 768px wide)
+sm (green - for tablets - screens equal to or greater than 768px wide)
+md (blue - for small laptops - screens equal to or greater than 992px wide)
+lg (yellow - for laptops and desktops - screens equal to or greater than 1200px wide)
 */
